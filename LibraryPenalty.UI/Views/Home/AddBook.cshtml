@@ -1,0 +1,52 @@
+﻿@model Book 
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddBook</title>
+</head>
+<body>
+    <div class="card">
+
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card card-primary">
+
+                     
+                    <form role="form" asp-action="AddBook" asp-controller="Home" method="post" enctype="multipart/form-data">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label>Kitap Adı</label>
+                                <input asp-for="Name" type="text" class="form-control" placeholder="Kitap Adı Giriniz">
+                            </div>
+                        </div>
+
+
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary">Ekle</button>
+                        </div>
+                    </form>
+                </div>
+                 
+
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{ 
+<script src="~/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+<script>
+    $(document).ready(function () {
+        bsCustomFileInput.init();
+    });
+</script>
+
+}
+</body>
+</html>

@@ -1,0 +1,51 @@
+﻿@model LibraryPenalty.UI.Models.BookVM
+@{
+    ViewData["Title"] = "Order";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        @*<a asp-action="Create" asp-controller="Order" class="btn btn-success float-right">Kategori Ekle</a>*@
+    </div>
+    <div class="card-body">
+        <table id="categorytable" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Kitap Adı</th>
+                    <th>Gün Sayısı</th>
+                    <th>Başlangıç Tarihi</th>
+                    <th>Başlangıç Tarihi</th>
+                    <th>Günlük Ceza Birim Fiyat</th>
+                    <th>Ceza Fiyatı</th>
+                    <th></th>
+                </tr>
+            </thead>
+           
+                <tbody>
+                    <tr>
+
+
+                       
+                            <td>@Model.Book.Name</td>
+
+                       
+                        @foreach (var item in Model.Penalties)
+                        {
+                            <td>@item.NonPanelty</td>
+                            <td>@item.StartDate</td>
+                            <td>@item.EndDate</td>
+                            <td>@item.Price tl</td>
+                            <td>@item.GetTotalPenalty() tl</td>
+                        }
+
+
+
+                    </tr>
+                </tbody>
+           
+
+        </table>
+    </div>
+</div>
+
